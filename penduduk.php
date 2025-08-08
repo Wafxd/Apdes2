@@ -55,21 +55,113 @@ ob_start();
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <a href="#" class="btn btn-info btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-info-circle fa-sm"></i>
-                                                    </span>
-                                                </a>
-                                                <a href="#" class="btn btn-danger btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-trash fa-sm"></i>
-                                                    </span>
-                                                </a>
-                                                <a href="#" class="btn btn-light btn-icon-split">
-                                                    <span class="icon text-gray-600">
-                                                        <i class="fas fa-edit fa-sm"></i>
-                                                    </span>
-                                                </a>
+                                                <!-- Dropdown Button -->
+                                                <div class="dropdown">
+                                                    <a href="#" class="btn btn-info dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <span class="icon text-white-50">
+                                                            <i class="fas fa-info-circle fa-sm"></i>
+                                                        </span>
+                                                        <span>Pilih Aksi</span>
+                                                    </a>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#detailModal">
+                                                            <i class="fas fa-info-circle fa-sm me-2 text-primary"></i> 
+                                                            <span>| Detail</span>
+                                                        </a></li>
+                                                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#editModal">
+                                                            <i class="fas fa-edit fa-sm me-2 text-success"></i>
+                                                            <span>| Edit</span>
+                                                        </a></li>
+                                                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#hapusModal">
+                                                            <i class="fas fa-trash fa-sm me-2 text-danger"></i>
+                                                            <span>| Hapus</span>
+                                                        </a></li>
+                                                        <li><a class="dropdown-item" href="#">
+                                                            <i class="fas fa-id-card fa-sm me-2 text-info"></i>
+                                                            <span>| Lihat KK</span>
+                                                        </a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <!-- Modal Detail -->
+                                                <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="detailModalLabel">Detail Data Penduduk</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="mb-3">
+                                                                    <label for="nik" class="form-label">NIK</label>
+                                                                    <input type="text" class="form-control" id="nik" placeholder="Enter NIK">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="nama" class="form-label">Nama</label>
+                                                                    <input type="text" class="form-control" id="nama" placeholder="Enter Nama">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="ttl" class="form-label">Tempat, Tanggal Lahir</label>
+                                                                    <input type="text" class="form-control" id="ttl" placeholder="Enter Tempat, Tanggal Lahir">
+                                                                </div>
+                                                                <div class="mb-3">
+                                                                    <label for="alamat" class="form-label">Alamat</label>
+                                                                    <input type="text" class="form-control" id="alamat" placeholder="Enter Alamat">
+                                                                </div>
+                                                                <!-- Tambahkan lebih banyak isian sesuai kebutuhan -->
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Modal Edit -->
+                                                <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="editModalLabel">Edit Data Penduduk</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form>
+                                                                    <!-- Edit form fields similar to the Detail form -->
+                                                                    <div class="mb-3">
+                                                                        <label for="nikEdit" class="form-label">NIK</label>
+                                                                        <input type="text" class="form-control" id="nikEdit" placeholder="Edit NIK">
+                                                                    </div>
+                                                                    <!-- Add more fields as needed -->
+                                                                </form>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Modal Hapus -->
+                                                <div class="modal fade" id="hapusModal" tabindex="-1" aria-labelledby="hapusModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="hapusModalLabel">Hapus Data Penduduk</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <p>Apakah Anda yakin ingin menghapus data ini?</p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                                <button type="button" class="btn btn-danger">Hapus</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                
+
                                             </td>
                                             <td>220411100039</td>
                                             <td>Monkey D Jeki</td>
