@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Sistem Administrasi Desa Sukolilo Timur">
+    <meta name="author" content="Desa Sukolilo Timur">
+
+    <title>Login | APDES Sukolilo Timur</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+    <!-- Custom fonts -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- Custom styles -->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    
+    <!-- Custom enhancements -->
+    <style>
+        :root {
+            --primary-color: #00e1ff;
+            --secondary-color: #00b9fc;
+            --accent-color: #f8f9fc;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e6f0e6 100%);
+            overflow-x: hidden;
+        }
+        
+        .login-container {
+            box-shadow: 0 15px 35px rgba(8, 177, 255, 0.317), 0 5px 15px rgba(0,0,0,.07);
+            border-radius: 12px;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .bg-login-image {
+            background: url('img/suramadu.JPG') center center no-repeat;
+            background-size: cover;
+            position: relative;
+            transition: all 0.5s ease;
+        }
+        
+        .bg-login-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .bg-login-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(24, 220, 250, 0.6) 0%, rgba(24, 220, 250, 0.4) 100%);
+            transition: all 0.5s ease;
+        }
+        
+        .bg-login-image:hover::before {
+            background: linear-gradient(135deg, rgba(24, 220, 250, 0.4) 0%, rgba(24, 220, 250, 0.2) 100%);
+        }
+        
+        .login-content {
+            padding: 3rem;
+            animation: fadeIn 0.8s ease-out 0.3s both;
+        }
+        
+        .welcome-text {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .welcome-text::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 3px;
+        }
+        
+        .form-control-user {
+            border-radius: 8px;
+            padding: 12px 20px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .form-control-user:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 225, 255, 0.2);
+        }
+        
+        .btn-user {
+            border-radius: 8px;
+            padding: 12px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 15px rgba(0, 225, 255, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 185, 252, 0.4);
+        }
+        
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+        
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 25%, rgba(255,255,255,0.3) 50%, transparent 75%);
+            background-size: 400% 400%;
+            animation: shine 3s infinite linear;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .btn-primary:hover::after {
+            opacity: 1;
+        }
+        
+        .brand-logo {
+            margin-bottom: 2rem;
+            display: inline-block;
+            animation: bounceIn 0.8s ease-out;
+        }
+        
+        .brand-logo img {
+            height: 90px;
+            transition: transform 0.3s;
+        }
+        
+        .brand-logo:hover img {
+            transform: scale(1.05) rotate(-2deg);
+        }
+        
+        .desa-info {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            padding: 0 30px;
+            color: white;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+        
+        .desa-info h3 {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 1.5rem;
+        }
+        
+        .desa-info p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        /* Animations */
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes shine {
+            0% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Water wave effect for background */
+        .water-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.2)" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            animation: wave 10s linear infinite;
+        }
+        
+        @keyframes wave {
+            0% { background-position-x: 0; }
+            100% { background-position-x: 1440px; }
+        }
+        
+        /* Floating bubbles */
+        .bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: rise 10s infinite ease-in;
+        }
+        
+        @keyframes rise {
+            0% {
+                bottom: -100px;
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(100px);
+            }
+            100% {
+                bottom: 1080px;
+                transform: translateX(-200px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Floating bubbles background -->
+    <div class="bubbles">
+        <!-- Bubbles will be added by JavaScript -->
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center align-items-center min-vh-100">
+            <div class="col-xl-10 col-lg-12 col-md-9">
+                <div class="login-container bg-white overflow-hidden">
+                    <div class="row no-gutters">
+                        <div class="col-lg-6 d-none d-lg-block bg-login-image">
+                            <div class="water-wave"></div>
+                            <div class="desa-info">
+                                <h3 class="floating">Desa Sukolilo Timur</h3>
+                                <p>Kab. Bangkalan, Kecamatan Labang</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="login-content">
+                                <div class="text-center mb-5">
+                                    <div class="brand-logo">
+                                        <img src="img/labang.png" alt="Logo APDES">
+                                    </div>
+                                    <h2 class="welcome-text animate__animated animate__fadeIn">APDES Sukolilo Timur</h2>
+                                    <p class="text-muted">Sistem Administrasi Desa Digital</p>
+                                </div>
+                                
+                                <form class="user">
+                                    <div class="form-group animate__animated animate__fadeInLeft animate__delay-1s">
+                                        <input type="text" class="form-control form-control-user"
+                                            id="username" placeholder="Nama Pengguna">
+                                    </div>
+                                    <div class="form-group animate__animated animate__fadeInRight animate__delay-1s">
+                                        <input type="password" class="form-control form-control-user"
+                                            id="password" placeholder="Kata Sandi">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-user btn-block mt-4 animate__animated animate__pulse animate__delay-2s">
+                                        <i class="fas fa-sign-in-alt mr-2"></i> Masuk
+                                    </button>
+                                </form>
+                                
+                                <div class="text-center mt-4 animate__animated animate__fadeIn animate__delay-2s">
+                                    <p class="small text-muted">&copy; 2025 APDES Sukolilo Timur</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+    
+    <!-- Custom animations -->
+    <script>
+        // Create bubbles
+        $(document).ready(function() {
+            const bubblesContainer = $('.bubbles');
+            const bubblesCount = 15;
+            
+            for (let i = 0; i < bubblesCount; i++) {
+                const size = Math.random() * 60 + 20;
+                const posX = Math.random() * 100;
+                const delay = Math.random() * 10;
+                const duration = Math.random() * 10 + 10;
+                
+                const bubble = $('<div class="bubble"></div>').css({
+                    width: `${size}px`,
+                    height: `${size}px`,
+                    left: `${posX}%`,
+                    animationDelay: `${delay}s`,
+                    animationDuration: `${duration}s`,
+                    opacity: Math.random() * 0.5 + 0.1
+                });
+                
+                bubblesContainer.append(bubble);
+            }
+            
+            // Add input focus effects
+            $('.form-control-user').focus(function() {
+                $(this).parent().addClass('animate__animated animate__pulse');
+            }).blur(function() {
+                $(this).parent().removeClass('animate__animated animate__pulse');
+            });
+        });
+    </script>
+</body>
+</html>
