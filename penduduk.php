@@ -211,7 +211,7 @@ ob_start();
                                                                             <div class="col-md-5 fw-bold">Nama</div>
                                                                             <div class="col-md-7 text-uppercase">MONKEY D. DRAGON</div>
                                                                         </div>
-                                                                        <div class="row g-2 mb-2">
+                                                                         <div class="row g-2 mb-2">
                                                                             <div class="col-md-5 fw-bold">Tempat/Tgl Lahir</div>
                                                                             <div class="col-md-7">LOGUETOWN, 01-01-1900</div>
                                                                         </div>
