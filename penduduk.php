@@ -9,12 +9,72 @@ ob_start();
 <!-- Content Row -->
                 <div class="container-fluid">
                     <!-- Page Heading -->
-                    <a href="#" class="btn btn-primary btn-icon-split">
+                    <a href="#" class="btn btn-primary btn-icon-split" data-bs-toggle="modal" data-bs-target="#tambahPendudukModal">
                         <span class="icon text-white-50">
                             <i class="fas fa-flag"></i>
                         </span>
                         <span class="text">+ Tambah Penduduk</span>
                     </a>
+                    <!-- Modal Tambah Penduduk -->
+                    <div class="modal fade" id="tambahPendudukModal" tabindex="-1" aria-labelledby="tambahPendudukModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="tambahPendudukModalLabel">Tambah Data Penduduk</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="nik" class="form-label">NIK</label>
+                                            <input type="text" class="form-control" id="nik" placeholder="Enter NIK" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="nama" class="form-label">Nama</label>
+                                            <input type="text" class="form-control" id="nama" placeholder="Enter Nama" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="ttl" class="form-label">Tempat, Tanggal Lahir</label>
+                                            <input type="text" class="form-control" id="ttl" placeholder="Enter Tempat, Tanggal Lahir" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="alamat" class="form-label">Alamat</label>
+                                            <input type="text" class="form-control" id="alamat" placeholder="Enter Alamat" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="pekerjaan" class="form-label">Pekerjaan</label>
+                                            <input type="text" class="form-control" id="pekerjaan" placeholder="Enter Pekerjaan" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="statusKawin" class="form-label">Status Kawin</label>
+                                            <select class="form-select" id="statusKawin" required>
+                                                <option value="">Pilih Status Kawin</option>
+                                                <option value="belumKawin">Belum Kawin</option>
+                                                <option value="kawin">Kawin</option>
+                                                <option value="cerai">Cerai</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="pendidikan" class="form-label">Pendidikan</label>
+                                            <select class="form-select" id="pendidikan" required>
+                                                <option value="">Pilih Pendidikan</option>
+                                                <option value="sd">SD</option>
+                                                <option value="smp">SMP</option>
+                                                <option value="sma">SMA</option>
+                                                <option value="sarjana">Sarjana</option>
+                                                <option value="pascaSarjana">Pasca Sarjana</option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <p></p>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
