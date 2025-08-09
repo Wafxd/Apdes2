@@ -28,25 +28,25 @@
     </div>
 
     <!-- Nav Item - Data Penduduk -->
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link" href="penduduk.html">
             <i class="fas fa-fw fa-users"></i>
             <span>Data Penduduk</span>
         </a>
-    </li>
+    </li> -->
 
     <!-- Nav Item - Surat Menyurat -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSuratMenyurat" 
         aria-expanded="true" aria-controls="collapseSuratMenyurat">
-            <i class="fas fa-fw fa-envelope"></i>
-            <span>Surat Menyurat</span>
+            <i class="fas fa-fw fa-users"></i>
+            <span>Data Penduduk</span>
         </a>
         <div id="collapseSuratMenyurat" class="collapse" aria-labelledby="headingSuratMenyurat" 
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Menu Surat Menyurat:</h6>
-                <a class="collapse-item" href="penduduk.php">Penduduk</a>
+                <h6 class="collapse-header">Menu Kependudukan</h6>
+                <a class="collapse-item" href="penduduk.php">penduduk</a>
                 <a class="collapse-item" href="keluarga.php">Keluarga</a>
             </div>
         </div>
