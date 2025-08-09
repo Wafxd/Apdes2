@@ -18,43 +18,104 @@ ob_start();
 
                     <!-- Modal Tambah KK -->
                     <div class="modal fade" id="tambahKKModal" tabindex="-1" aria-labelledby="tambahKKModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
+                        <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="tambahKKModalLabel">Tambah Data Kartu Keluarga (KK)</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body">
+                                <div class="modal-body p-4">
                                     <form>
-                                        <div class="mb-3">
-                                            <label for="nik" class="form-label">NIK</label>
-                                            <input type="text" class="form-control" id="nik" placeholder="Enter NIK" required>
+                                        <div class="row mb-4">
+                                            <div class="col-md-12">
+                                                <div class="row g-2 mb-2">
+                                                    <div class="col-md-2 fw-bold align-self-center">NIK</div>
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control font-monospace" id="inputNIK">
+                                                    </div>
+                                                    <div class="col-md-2 fw-bold align-self-center">No. KK Sementara</div>
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control font-monospace" id="inputNoKK">
+                                                    </div>
+                                                </div>
+                                                <div class="row g-2 mb-2">
+                                                    <div class="col-md-2 fw-bold align-self-center">Nama</div>
+                                                    <div class="col-md-10">
+                                                        <input type="text" class="form-control text-uppercase" id="inputNama">
+                                                    </div>
+                                                </div>
+                                                <div class="row g-2 mb-2">
+                                                    <div class="col-md-2 fw-bold align-self-center">Tempat/Tgl Lahir</div>
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" id="inputTempatLahir">
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="date" class="form-control" id="inputTanggalLahir">
+                                                    </div>
+                                                </div>
+                                                <div class="row g-2 mb-2">
+                                                    <div class="col-md-2 fw-bold align-self-center">Jenis Kelamin</div>
+                                                    <div class="col-md-3">
+                                                        <select class="form-select" id="inputJenisKelamin">
+                                                            <option value="LAKI-LAKI" selected>Laki-laki</option>
+                                                            <option value="PEREMPUAN">Perempuan</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-2 fw-bold align-self-center">Agama</div>
+                                                    <div class="col-md-2">
+                                                        <select class="form-select" id="inputAgama">
+                                                            <option value="ISLAM" selected>Islam</option>
+                                                            <option value="KRISTEN_PROTESTAN">Kristen Protestan</option>
+                                                            <option value="KRISTEN_KATOLIK">Kristen Katolik</option>
+                                                            <option value="HINDU">Hindu</option>
+                                                            <option value="BUDDHA">Buddha</option>
+                                                            <option value="KONGHUCU">Konghucu</option>
+                                                        </select>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row g-2 mb-2">
+                                                    <div class="col-md-2 fw-bold align-self-center">Alamat</div>
+                                                    <div class="col-md-10">
+                                                        <textarea class="form-control" id="inputAlamat" rows="2"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row g-2 mb-2">
+                                                    <div class="col-md-2 fw-bold align-self-center">RT/RW</div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="inputRT" value="001">
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <input type="text" class="form-control" id="inputRW" value="002">
+                                                    </div>
+                                                    <div class="col-md-2 fw-bold align-self-center">Desa/Kel</div>
+                                                    <div class="col-md-4">
+                                                        <input type="text" class="form-control" id="inputDesa" value="Sukolilo Timur">
+                                                    </div>
+                                                </div>
+                                                <div class="row g-2 mb-2">
+                                                    <div class="col-md-2 fw-bold align-self-center">Kecamatan</div>
+                                                    <div class="col-md-3">
+                                                        <input type="text" class="form-control" id="inputKecamatan" value="Sukolilo">
+                                                    </div>
+                                                    <div class="col-md-2 fw-bold align-self-center">Kabupaten/Kota</div>
+                                                    <div class="col-md-3">
+                                                        <input type="text" class="form-control" id="inputkab" value="Bangkalan">
+                                                    </div>
+                                                </div>
+                                                <div class="row g-2 mb-2">
+                                                    <div class="col-md-2 fw-bold align-self-center">Kode Pos</div>
+                                                    <div class="col-md-3">
+                                                        <input type="number" class="form-control" id="inputpos" value="69162">
+                                                    </div>
+                                                    <div class="col-md-2 fw-bold align-self-center">Provinsi</div>
+                                                    <div class="col-md-3">
+                                                        <input type="text" class="form-control" id="inputprov" value="Jawa Timur">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="noKK" class="form-label">No KK Sementara</label>
-                                            <input type="text" class="form-control" id="noKK" placeholder="Enter No KK Sementara" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="nama" class="form-label">Nama</label>
-                                            <input type="text" class="form-control" id="nama" placeholder="Enter Nama" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="hubunganKeluarga" class="form-label">Hubungan dalam Keluarga</label>
-                                            <select class="form-select" id="hubunganKeluarga" required>
-                                                <option value="">Pilih Hubungan</option>
-                                                <option value="kepalaKeluarga">Kepala Keluarga</option>
-                                                <option value="istri">Istri</option>
-                                                <option value="anak">Anak</option>
-                                            </select>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="jenisKelamin" class="form-label">Jenis Kelamin</label>
-                                            <select class="form-select" id="jenisKelamin" required>
-                                                <option value="">Pilih Jenis Kelamin</option>
-                                                <option value="lakiLaki">Laki-laki</option>
-                                                <option value="perempuan">Perempuan</option>
-                                            </select>
-                                        </div>
+                                        
                                     </form>
                                 </div>
                                 <div class="modal-footer">
