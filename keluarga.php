@@ -9,18 +9,19 @@ ob_start();
 <!-- Content Row -->
                 <div class="container-fluid">
                     <!-- Page Heading -->
-                    <a href="#" class="btn btn-primary btn-icon-split" data-bs-toggle="modal" data-bs-target="#tambahPendudukModal">
+                    <a href="#" class="btn btn-success btn-icon-split" data-bs-toggle="modal" data-bs-target="#tambahKKModal">
                         <span class="icon text-white-50">
                             <i class="fas fa-flag"></i>
                         </span>
-                        <span class="text">+ Tambah Penduduk</span>
+                        <span class="text">+ Tambah KK</span>
                     </a>
-                    <!-- Modal Tambah Penduduk -->
-                    <div class="modal fade" id="tambahPendudukModal" tabindex="-1" aria-labelledby="tambahPendudukModalLabel" aria-hidden="true">
+
+                    <!-- Modal Tambah KK -->
+                    <div class="modal fade" id="tambahKKModal" tabindex="-1" aria-labelledby="tambahKKModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="tambahPendudukModalLabel">Tambah Data Penduduk</h5>
+                                    <h5 class="modal-title" id="tambahKKModalLabel">Tambah Data Kartu Keluarga (KK)</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
@@ -30,39 +31,28 @@ ob_start();
                                             <input type="text" class="form-control" id="nik" placeholder="Enter NIK" required>
                                         </div>
                                         <div class="mb-3">
+                                            <label for="noKK" class="form-label">No KK Sementara</label>
+                                            <input type="text" class="form-control" id="noKK" placeholder="Enter No KK Sementara" required>
+                                        </div>
+                                        <div class="mb-3">
                                             <label for="nama" class="form-label">Nama</label>
                                             <input type="text" class="form-control" id="nama" placeholder="Enter Nama" required>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="ttl" class="form-label">Tempat, Tanggal Lahir</label>
-                                            <input type="text" class="form-control" id="ttl" placeholder="Enter Tempat, Tanggal Lahir" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="alamat" class="form-label">Alamat</label>
-                                            <input type="text" class="form-control" id="alamat" placeholder="Enter Alamat" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="pekerjaan" class="form-label">Pekerjaan</label>
-                                            <input type="text" class="form-control" id="pekerjaan" placeholder="Enter Pekerjaan" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="statusKawin" class="form-label">Status Kawin</label>
-                                            <select class="form-select" id="statusKawin" required>
-                                                <option value="">Pilih Status Kawin</option>
-                                                <option value="belumKawin">Belum Kawin</option>
-                                                <option value="kawin">Kawin</option>
-                                                <option value="cerai">Cerai</option>
+                                            <label for="hubunganKeluarga" class="form-label">Hubungan dalam Keluarga</label>
+                                            <select class="form-select" id="hubunganKeluarga" required>
+                                                <option value="">Pilih Hubungan</option>
+                                                <option value="kepalaKeluarga">Kepala Keluarga</option>
+                                                <option value="istri">Istri</option>
+                                                <option value="anak">Anak</option>
                                             </select>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="pendidikan" class="form-label">Pendidikan</label>
-                                            <select class="form-select" id="pendidikan" required>
-                                                <option value="">Pilih Pendidikan</option>
-                                                <option value="sd">SD</option>
-                                                <option value="smp">SMP</option>
-                                                <option value="sma">SMA</option>
-                                                <option value="sarjana">Sarjana</option>
-                                                <option value="pascaSarjana">Pasca Sarjana</option>
+                                            <label for="jenisKelamin" class="form-label">Jenis Kelamin</label>
+                                            <select class="form-select" id="jenisKelamin" required>
+                                                <option value="">Pilih Jenis Kelamin</option>
+                                                <option value="lakiLaki">Laki-laki</option>
+                                                <option value="perempuan">Perempuan</option>
                                             </select>
                                         </div>
                                     </form>
@@ -74,6 +64,7 @@ ob_start();
                             </div>
                         </div>
                     </div>
+
 
                     <p></p>
                     <!-- DataTales Example -->
