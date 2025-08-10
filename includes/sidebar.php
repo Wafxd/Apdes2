@@ -16,7 +16,7 @@
     <li class="nav-item active">
         <a class="nav-link" href="index1.php">
             <i class="fas fa-fw fa-home"></i>
-            <span>Beranda</span></a>
+            <span>DASHBOARD</span></a>
     </li>
 
     <!-- Divider -->
@@ -24,7 +24,7 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Administrasi Desa
+        ADMINISTRASI DESA
     </div>
 
     <!-- Nav Item - Data Penduduk -->
@@ -40,21 +40,21 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSuratMenyurat" 
         aria-expanded="true" aria-controls="collapseSuratMenyurat">
             <i class="fas fa-fw fa-users"></i>
-            <span>Data Penduduk</span>
+            <span>DATA PENDUDUK</span>
         </a>
         <div id="collapseSuratMenyurat" class="collapse" aria-labelledby="headingSuratMenyurat" 
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Menu Kependudukan</h6>
-                <a class="collapse-item" href="penduduk.php">penduduk</a>
-                <a class="collapse-item" href="keluarga.php">Keluarga</a>
+                <a class="collapse-item" href="penduduk.php">PENDUDUK</a>
+                <a class="collapse-item" href="keluarga.php">KELUARGA</a>
             </div>
         </div>
     </li>
 
 
     <!-- Nav Item - Keuangan -->
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseKeuangan" 
            aria-expanded="true" aria-controls="collapseKeuangan">
             <i class="fas fa-fw fa-money-bill-wave"></i>
@@ -69,14 +69,14 @@
                 <a class="collapse-item" href="laporan-keuangan.html">Laporan Keuangan</a>
             </div>
         </div>
-    </li>
+    </li> -->
 
     <!-- Divider -->
     <hr class="sidebar-divider">
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Pelayanan Publik
+        PELAYANAN PUBLIK
     </div>
 
     <!-- Nav Item - Layanan -->
@@ -84,25 +84,25 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayanan" 
            aria-expanded="true" aria-controls="collapseLayanan">
             <i class="fas fa-fw fa-hands-helping"></i>
-            <span>Layanan Desa</span>
+            <span>LAYANAN DESA</span>
         </a>
         <div id="collapseLayanan" class="collapse" aria-labelledby="headingLayanan" 
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Jenis Layanan:</h6>
-                <a class="collapse-item" href="skck.html">SKCK</a>
-                <a class="collapse-item" href="sktm.html">SKTM</a>
-                <a class="collapse-item" href="domisili.html">Surat Domisili</a>
-                <a class="collapse-item" href="usaha.html">Surat Izin Usaha</a>
+                <h6 class="collapse-header">Jenis Surat</h6>
+                <a class="collapse-item" href="skck.html">KETERANGAN</a>
+                <a class="collapse-item" href="sktm.html">SKCK</a>
+                <a class="collapse-item" href="domisili.html">KETERANGAN USAHA</a>
+                <a class="collapse-item" href="usaha.html">USAHA</a>
             </div>
         </div>
     </li>
 
     <!-- Nav Item - Pengaduan -->
     <li class="nav-item">
-        <a class="nav-link" href="pengaduan.html">
-            <i class="fas fa-fw fa-comments"></i>
-            <span>Pengaduan Masyarakat</span>
+        <a class="nav-link" href="keluar.php">
+            <i class="fas fa-fw fa-envelope"></i>
+            <span>DATA SURAT</span>
         </a>
     </li>
 
