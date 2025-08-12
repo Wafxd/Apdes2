@@ -90,8 +90,8 @@
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Jenis Surat</h6>
-                <a class="collapse-item" href="skck.html">KETERANGAN</a>
-                <a class="collapse-item" href="sktm.html">SKCK</a>
+                <a class="collapse-item" href="suratket.php">KETERANGAN</a>
+                <a class="collapse-item" href="surat.php">SKCK</a>
                 <a class="collapse-item" href="domisili.html">KETERANGAN USAHA</a>
                 <a class="collapse-item" href="usaha.html">USAHA</a>
             </div>
