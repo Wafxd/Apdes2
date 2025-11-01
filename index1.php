@@ -1,4 +1,20 @@
 <?php
+
+session_start();
+
+include "db/funct.php";
+
+if (isset($_SESSION['id_admin']) && isset($_SESSION['nama_admin'])) {
+    $id_user = $_SESSION['id_admin'];
+    $username = $_SESSION["nama_admin"];
+    $nama = query("SELECT * FROM tb_admin WHERE id_admin = '$id_user'")[0];
+} else {
+    $id_user = null;
+    $username = null;
+    $nama = null;
+}
+
+
 $pageTitle = "Dashboard Statistik Dusun";
 $pageHeaderButton = '<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
     <i class="fas fa-download fa-sm text-white-50"></i> Generate Report
@@ -45,6 +61,7 @@ ob_start();
         color: #2c3e50;
     }
 </style>
+
 
 <div class="container-fluid">
     <!-- Info Boxes -->
