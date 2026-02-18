@@ -2,9 +2,9 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index1.php">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo $root_path; ?>index.php">
         <div class="sidebar-brand-icon">
-            <img src="img/labang.png" alt="Logo Desa" style="height: 40px;">
+            <img src="<?php echo $root_path; ?>img/labang.png" alt="Logo Desa" style="height: 40px;">
         </div>
         <div class="sidebar-brand-text mx-3">APDES <sup>Sukolilo Timur</sup></div>
     </a>
@@ -13,10 +13,11 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-        <a class="nav-link" href="index1.php">
+    <li class="nav-item <?php echo basename($_SERVER['PHP_SELF']) == 'dashboard.php' ? 'active' : ''; ?>">
+        <a class="nav-link" href="<?php echo $root_path; ?>dashboard.php">
             <i class="fas fa-fw fa-home"></i>
-            <span>DASHBOARD</span></a>
+            <span>DASHBOARD</span>
+        </a>
     </li>
 
     <!-- Divider -->
@@ -28,56 +29,21 @@
     </div>
 
     <!-- Nav Item - Data Penduduk -->
-    <!-- <li class="nav-item">
-        <a class="nav-link" href="penduduk.html">
-            <i class="fas fa-fw fa-users"></i>
-            <span>Data Penduduk</span>
-        </a>
-    </li> -->
-
-    <!-- Nav Item - Surat Menyurat -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSuratMenyurat" 
-        aria-expanded="true" aria-controls="collapseSuratMenyurat">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePenduduk" 
+           aria-expanded="true" aria-controls="collapsePenduduk">
             <i class="fas fa-fw fa-users"></i>
             <span>DATA PENDUDUK</span>
         </a>
-        <div id="collapseSuratMenyurat" class="collapse" aria-labelledby="headingSuratMenyurat" 
-            data-parent="#accordionSidebar">
+        <div id="collapsePenduduk" class="collapse" aria-labelledby="headingPenduduk" 
+             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Menu Kependudukan</h6>
-                <a class="collapse-item" href="penduduk.php">PENDUDUK</a>
-                <a class="collapse-item" href="keluarga.php">KELUARGA</a>
+                <a class="collapse-item" href="<?php echo $root_path; ?>penduduk.php">PENDUDUK</a>
+                <a class="collapse-item" href="<?php echo $root_path; ?>keluarga.php">KELUARGA</a>
             </div>
         </div>
     </li>
-
-
-    <!-- Nav Item - Keuangan -->
-    <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseKeuangan" 
-           aria-expanded="true" aria-controls="collapseKeuangan">
-            <i class="fas fa-fw fa-money-bill-wave"></i>
-            <span>Keuangan Desa</span>
-        </a>
-        <div id="collapseKeuangan" class="collapse" aria-labelledby="headingKeuangan" 
-             data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Menu Keuangan:</h6>
-                <a class="collapse-item" href="apbdes.html">APBDes</a>
-                <a class="collapse-item" href="pajak.html">Pajak & Retribusi</a>
-                <a class="collapse-item" href="laporan-keuangan.html">Laporan Keuangan</a>
-            </div>
-        </div>
-    </li> -->
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        PELAYANAN PUBLIK
-    </div>
 
     <!-- Nav Item - Layanan -->
     <li class="nav-item">
@@ -90,17 +56,17 @@
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Jenis Surat</h6>
-                <a class="collapse-item" href="suratket.php">KETERANGAN</a>
-                <a class="collapse-item" href="surat.php">SKCK</a>
-                <a class="collapse-item" href="domisili.html">KETERANGAN USAHA</a>
-                <a class="collapse-item" href="usaha.html">USAHA</a>
+                <a class="collapse-item" href="<?php echo $root_path; ?>surat/domisili.php">DOMISILI</a>
+                <a class="collapse-item" href="<?php echo $root_path; ?>surat/usaha.php">USAHA</a>
+                <a class="collapse-item" href="<?php echo $root_path; ?>surat/kehilangan.php">KEHILANGAN</a>
+                <a class="collapse-item" href="<?php echo $root_path; ?>surat/keterangan.php">KETERANGAN</a>
             </div>
         </div>
     </li>
 
-    <!-- Nav Item - Pengaduan -->
+    <!-- Nav Item - Data Surat -->
     <li class="nav-item">
-        <a class="nav-link" href="keluar.php">
+        <a class="nav-link" href="<?php echo $root_path; ?>surat_keluar.php">
             <i class="fas fa-fw fa-envelope"></i>
             <span>DATA SURAT</span>
         </a>
@@ -116,7 +82,7 @@
 
     <!-- Nav Item - Pengaturan -->
     <li class="nav-item">
-        <a class="nav-link" href="pengaturan.html">
+        <a class="nav-link" href="<?php echo $root_path; ?>pengaturan.php">
             <i class="fas fa-fw fa-cog"></i>
             <span>Pengaturan Sistem</span>
         </a>
@@ -124,7 +90,7 @@
 
     <!-- Nav Item - Pengguna -->
     <li class="nav-item">
-        <a class="nav-link" href="pengguna.html">
+        <a class="nav-link" href="<?php echo $root_path; ?>pengguna.php">
             <i class="fas fa-fw fa-user-shield"></i>
             <span>Manajemen Pengguna</span>
         </a>
@@ -133,7 +99,7 @@
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
-    <!-- Sidebar Toggler (Sidebar) -->
+    <!-- Sidebar Toggler -->
     <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
@@ -141,7 +107,6 @@
     <!-- Info Desa -->
     <div class="sidebar-card d-none d-lg-flex">
         <div class="card-body p-0">
-            <!-- Judul dan Alamat -->
             <div class="px-3 pt-3 pb-2 text-center">
                 <h6 class="font-weight-bold text-primary mb-1">Lokasi Desa Sukolilo Timur</h6>
                 <p class="small mb-2">
@@ -158,14 +123,12 @@
                     height="100%" 
                     style="border:0;" 
                     allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
+                    loading="lazy">
                 </iframe>
             </div>
             
-            <!-- Tombol Aksi -->
             <div class="px-3 pb-3 pt-2 text-center">
-                <a class="btn btn-sm btn-outline-primary mr-1" href="profil-desa.html">
+                <a class="btn btn-sm btn-outline-primary" href="<?php echo $root_path; ?>profil-desa.php">
                     <i class="fas fa-info-circle"></i> Profil Desa
                 </a>
             </div>

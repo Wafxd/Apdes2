@@ -1,5 +1,25 @@
 <?php
+// File: login.php
 session_start();
+
+// Cek session timeout
+if (isset($_SESSION['LAST_ACTIVITY'])) {
+    $timeout = 30 * 60;
+    if (time() - $_SESSION['LAST_ACTIVITY'] > $timeout) {
+        session_unset();
+        session_destroy();
+    }
+}
+
+// Cek jika user sudah login, redirect ke dashboard
+if (isset($_SESSION["id_admin"]) && isset($_SESSION["nama_admin"])) {
+    header("Location: dashboard.php");
+    exit();
+}
+
+// Update last activity
+$_SESSION['LAST_ACTIVITY'] = time();
+
 include "db/funct.php";
 
 if (isset($_POST["submit"])) {
@@ -15,26 +35,38 @@ if (isset($_POST["submit"])) {
             $user = mysqli_fetch_assoc($result);
             $_SESSION["id_admin"] = $user["id_admin"];
             $_SESSION["nama_admin"] = $user["nama_admin"];
-            if ($password == $user['password']) {
-                echo "<script>
-                    alert('Login sukses'); 
-                    window.location.href = 'index1.php';
-                </script>";
-            } else {
-                echo "<script>
-                    alert('Password Salah, silahkan coba lagi.');
-                    history.back();
-                </script>";
-            }
-        }else {
+            $_SESSION["LAST_ACTIVITY"] = time(); // Set waktu login
+            
+            // Di login.php, cari bagian ini dan ganti:
+        if ($password == $user['password']) {
+            echo "<script>
+                alert('Login sukses'); 
+                window.location.href = 'dashboard.php'; // GANTI INI
+            </script>";
+            exit();
+        }
+
+        // MENJADI:
+        if ($password == $user['password']) {
+            echo "<script>
+                alert('Login sukses'); 
+                window.location.href = 'dashboard.php'; // MENJADI dashboard.php
+            </script>";
+            exit();
+        }
+        } else {
             echo "<script>
                 alert('Username tidak Ditemukan, silahkan daftar terlebih dahulu jika belum memiliki akun');
                 history.back();
             </script>";
         }
+    } else {
+        echo "<script>
+            alert('Harap isi semua field!');
+            history.back();
+        </script>";
     }
 }
-
 ?>
 
 <!DOCTYPE html>
